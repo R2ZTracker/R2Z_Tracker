@@ -2,7 +2,7 @@
 
 R2Z Tracker Project Mobile App
 
-<img src="/R2Z_Poster.png" alt="Alt Text" width="500" height="500"/>
+<img src="/src/assets/icon/R2Z_Poster.png" alt="Alt Text" width="500" height="500"/>
 
 ## Description
 
