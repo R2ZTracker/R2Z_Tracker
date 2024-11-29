@@ -13,6 +13,6 @@ more info on -> [Google Drive](https://drive.google.com/drive/u/0/folders/1JTjU1
 ## Usage
 
 To use this project, follow the steps below:
-1. Clone the repo - git clone <repo-link>.
-2. Install dependencies - npm install.
-3. Run the application - ionic serve.
+1. Clone the repo - git clone repo-link
+2. Install dependencies - npm install
+3. Run the application - ionic serve
