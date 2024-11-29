@@ -1,1 +1,1 @@
-![Alt Text](/R2Z Tracker Poster.png)
+![Alt Text](/R2Z_Poster.png)
