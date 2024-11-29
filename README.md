@@ -6,7 +6,9 @@ R2Z Tracker Project Mobile App
 
 ## Description
 
-This project tracks covid cases on each barangay of olongapo city
+This project tracks covid cases on each barangay of olongapo city.
+
+more info on -> [Google Drive](https://drive.google.com/drive/u/0/folders/1JTjU1rEUWLuLSmrnfWJg4O87RYB4S1uO)
 
 ## Usage
 
