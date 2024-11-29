@@ -1,0 +1,138 @@
+ion-header {
+  ion-toolbar {
+    --background: #1a1926;
+    background: #1a1926;
+    padding: 0 10px;
+    .bordered {
+      --border-radius: 10px;
+    }
+    ion-title {
+      position: relative;
+      right: 15px;
+
+      color: #21b400;
+    }
+  }
+  // .item {
+  //     --background: #f1f5f8;
+  //    background: #f1f5f8;
+  //   //  padding: 0 10px;
+  //    display: flex;
+  //     flex-direction: row;
+  //     justify-content: space-between;
+  //     align-items: center;
+  // }
+  ion-button {
+    background: #ffffff;
+    border-radius: 10px;
+  }
+}
+ion-content {
+  --background: #fff;
+  .covidhotline {
+    box-shadow: 0px 2px 9px 0px grey;
+    border-radius: 5px;
+    width: 94%;
+    margin: auto;
+    height: 25%;
+    // background-color: #21b400;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    align-content: space-around;
+
+    // text-align: center;
+    .chcontainer {
+      margin-left: 5%;
+      margin-right: 5%;
+      width: 90%;
+      height: 60px;
+      // background-color: black;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+      .chhotline1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45%;
+        height: 80%;
+        // background-color: brown;
+        border-radius: 100px;
+        font-size: 20px;
+        border: solid 2px #00bcd4;
+        color: #00bcd4;
+      }
+    }
+  }
+  .brgyhotline {
+    box-shadow: 0px 2px 9px 0px grey;
+    border-radius: 5px;
+    width: 94%;
+    margin: auto;
+    height: 69%;
+    // background-color: #21b40023;
+    text-align: center;
+
+    .brgycontact {
+      margin-top: 15px;
+      width: 80%;
+      height: 130px;
+      // background-color: red;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      flex-direction: column;
+      .brgyname {
+        font-size: 17px;
+        font-weight: bold;
+      }
+      .brgycaptname {
+        font-size: 18px;
+        // font-weight: bold;
+      }
+
+      .bhcontainer {
+        margin-left: 5%;
+        margin-right: 5%;
+        width: 95%;
+        height: 60px;
+        // background-color: black;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+
+        .bhhotline1 {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 120px;
+          height: 70%;
+          // background-color: brown;
+          border-radius: 100px;
+          font-size: 19px;
+          border: solid 2px #21b400;
+          color: #21b400;
+        }
+        .bhhotline2 {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 160px;
+          height: 70%;
+          // background-color: brown;
+          border-radius: 100px;
+          font-size: 19px;
+          border: solid 2px #21b400;
+          color: #21b400;
+        }
+      }
+    }
+  }
+}
+ion-searchbar {
+  --border-radius: 10px;
+}

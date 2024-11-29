@@ -1,0 +1,49 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>
+      Global Cases
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="['../tabs/tab3']" style="border-radius: 50%; background-color: #1a1926;">
+        <ion-icon style="height: 25px; width: 25px;" color="custom" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+
+  </ion-toolbar>
+
+</ion-header>
+<ion-searchbar [(ngModel)]="searchCountry"></ion-searchbar>
+<ion-content>
+
+
+
+  <ion-card *ngFor="let data of countries | filter:searchCountry">
+
+
+    <h2 style="text-align: center;">{{data.country}}</h2>
+    <div class="casescontainer">
+      <div class="casescard1">
+        <img src="../../../assets/images/Total.png" alt="">
+        <span style="color: #c35422;" class="casenumber">{{data.cases}}</span>
+        <span class="casetitle">Confirmed</span>
+      </div>
+      <div class="casescard2">
+        <img src="../../../assets/images/Death.png" alt="">
+        <span style="color: #d72336;" class="casenumber">{{data.deaths}}</span>
+        <span class="casetitle">Death</span>
+
+      </div>
+      <div class="casescard3">
+        <img src="../../../assets/images/recovered.png" alt="">
+        <span style="color: #479a53;" class="casenumber">{{data.recovered}}</span>
+        <span class="casetitle">Recovered</span>
+
+      </div>
+    </div>
+
+    <p style="color:red; text-align: center;">{{currentDate | date:'MMMM dd yyyy'}} New Cases: {{data.todayCases}}</p>
+  </ion-card>
+
+
+</ion-content>

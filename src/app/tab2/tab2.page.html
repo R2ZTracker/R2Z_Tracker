@@ -1,0 +1,128 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <!-- <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon color="custom" name="menu-sharp" style="height: 30px; width: 30px;"></ion-icon>
+      </ion-button>
+    </ion-buttons> -->
+    <ion-buttons slot="start">
+      <ion-menu-button color="custom"></ion-menu-button>
+
+    </ion-buttons>
+
+
+    <span slot="start" class="header-title">R2Z Tracker</span>
+    <span slot="end" class="header-time">{{currentDate | date:'EEE, h:mm:ss a'}}
+    </span>
+
+
+    <ion-buttons slot="end">
+      <ion-button class="bordered" (click)="presentAlert()">
+        <span class="badge badge-danger"
+          style="position: absolute; font-size: 55%; z-index: 2; border-radius: 25px; left: 9px; top: 4px;">1</span>
+        <ion-icon color="custom" name="notifications">
+
+        </ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+
+
+
+<div class="topcontainer">
+  <div class="topdesign">
+    <div class="item">
+
+      <div class="label1 py-3">
+        <span style="color: #21b400; font-size: 6vw;">Statistics</span>
+        <span style="color: #21b400; font-size: 4vw;">Covid-19</span>
+      </div>
+
+      <div class="label2 py-3" *ngFor="let data of city">
+        <p class="color">Active Cases</p>
+        <h3>{{data.cactive_cases}}</h3>
+      </div>
+    </div>
+    <div class="button-container">
+
+      <ion-button [routerLink]="['/globalcases']">Global Cases</ion-button>
+
+      <ion-button [routerLink]="['/searchcases']"><span>Olongapo Cases</span></ion-button>
+    </div>
+
+  </div>
+
+
+
+
+
+
+</div>
+
+
+
+<ion-content>
+
+  <ion-card>
+    <ion-card-content style="padding-left: 0;">
+
+      <ion-card-title class="text-center font-weight-normal" style="font-size: 16px; padding-left: 16px;">Barangay
+        Cases Percentage
+      </ion-card-title>
+      <div class="chartcontainer">
+        <ngx-charts-advanced-pie-chart (window:resize)="onResize($event)" [view]="view" [scheme]="colorScheme"
+          [results]="brgypercent" [gradient]="gradient">
+        </ngx-charts-advanced-pie-chart>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-card class="d-flex justify-content-center align-items-center">
+    <ion-card-content>
+      <ion-card-title class="text-center font-weight-normal" style="font-size: 16px; padding-left: 16px;">Age Cases
+        Percentage
+      </ion-card-title>
+      <ngx-charts-bar-vertical [view]="view2" [scheme]="colorScheme2" [results]="agepercent" [gradient]="gradient2"
+        [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend2" [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel">
+      </ngx-charts-bar-vertical>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content *ngFor="let list of city">
+      <ion-card-title class="text-center font-weight-normal" style="font-size: 16px;">Gender Cases Percentage
+      </ion-card-title>
+
+      <div class="percentagecontainer">
+        <div style="background: #feaa3d15;" class="percentage">
+          <ion-icon name="man" style="height: 100px; width: 50px;  color: #fea93d;"></ion-icon>
+          <div class="gendercontainer" *ngFor="let data of malepercent">
+            <span class="percentagegendertext">Male</span>
+            <span class="percentagetext">Confirmed Cases</span>
+            <span style="color: #fea93d;" class="percentagevalue">
+              {{data.male*100/list.ctotal_cases | number : '1.2-2'}}%</span>
+          </div>
+        </div>
+
+        <div style="background: #fc408213;" class="percentage">
+          <ion-icon name="woman" style="height: 100px; width: 50px;  color: #fc4082;"></ion-icon>
+          <div class="gendercontainer" *ngFor="let data of femalepercent">
+            <span class="percentagegendertext">Female</span>
+            <span class="percentagetext">Confirmed cases</span>
+            <span style="color: #fc4082;" class="percentagevalue">
+              {{data.female*100/list.ctotal_cases | number : '1.2-2'}}%</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- </div> -->
+    </ion-card-content>
+  </ion-card>
+
+
+</ion-content>

@@ -1,0 +1,13 @@
+{
+  "appId": "io.r2z.tracker",
+  "appName": "R2Zero Tracker",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}

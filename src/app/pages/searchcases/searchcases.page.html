@@ -1,0 +1,37 @@
+<ion-header class="ion-no-border">
+	<ion-toolbar>
+		<ion-title> Search Cases </ion-title>
+		<ion-buttons slot="start">
+			<ion-button [routerLink]="['../tabs/tab1']" style="border-radius: 50%; background-color: #1a1926">
+				<ion-icon style="height: 25px; width: 25px" color="custom" name="arrow-back"></ion-icon>
+			</ion-button>
+		</ion-buttons>
+	</ion-toolbar>
+</ion-header>
+<ion-searchbar [(ngModel)]="searchpatient"></ion-searchbar>
+<ion-content>
+	<div class="searchcontainer">
+		<ion-card *ngFor="let data of patient | filter:searchpatient">
+			<div *ngIf="data.p_gender == 'Male'; else elseBlock">
+				<img src="../../../assets/images/searchcases/male.png" alt="" />
+			</div>
+			<ng-template #elseBlock>
+				<img style="margin-top: 35px" src="../../../assets/images/searchcases/female.png" alt="" />
+			</ng-template>
+
+			<div class="cardtext">
+				<label style="font-size: 15px">Patient ID:
+					<span style="font-size: 16px; font-weight: bold">{{data.p_id}}</span></label>
+				<span style="font-size: 15px">Age: {{data.p_age}}</span>
+				<span style="font-size: 15px">Barangay: {{data.p_barangay}}</span>
+				<span style="font-size: 15px" *ngIf="data.c_status == 'Recovered'; else s">Current Status:
+					<span style="color: rgb(98, 230, 98)">{{data.c_status}}</span>
+				</span>
+				<ng-template #s>
+					<span style="font-size: 15px;">Current Status:
+						<span style="color: rgb(207, 79, 79)">{{data.c_status}}</span></span>
+				</ng-template>
+			</div>
+		</ion-card>
+	</div>
+</ion-content>

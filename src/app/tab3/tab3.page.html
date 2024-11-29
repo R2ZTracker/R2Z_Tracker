@@ -1,0 +1,294 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <!-- <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon color="custom" name="menu-outline" style="height: 30px; width: 30px;"></ion-icon>
+      </ion-button>
+    </ion-buttons> -->
+    <ion-buttons slot="start">
+      <ion-menu-button color="custom"></ion-menu-button>
+
+    </ion-buttons>
+
+
+    <span slot="start" class="header-title">R2Z Tracker</span>
+    <span slot="end" class="header-time">{{currentDate | date:'EEE, h:mm:ss a'}}
+    </span>
+
+
+    <ion-buttons slot="end">
+      <ion-button class="bordered" (click)="presentAlert()">
+        <span class="badge badge-danger"
+          style="position: absolute; font-size: 55%; z-index: 2; border-radius: 25px; left: 9px; top: 4px;">1</span>
+        <ion-icon color="custom" name="notifications"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<div class="topcontainer">
+  <div class="topdesign">
+    <div class="item">
+
+      <div class="label1 py-3">
+        <span style="color: #21b400; font-size: 4vw;">Get to know</span>
+        <span style="color: #21b400; font-size: 6vw;">About Covid-19.</span>
+      </div>
+
+      <div class="label2 py-3" *ngFor="let data of city">
+        <p class="color">Active Cases</p>
+        <h3>{{data.cactive_cases}}</h3>
+      </div>
+    </div>
+    <div class="button-container">
+      <ion-button [routerLink]="['/emergency']">Emergency Hotlines</ion-button>
+    </div>
+  </div>
+</div>
+<ion-content>
+
+  <ng-template #content let-modal>
+
+    <div class="modal-body text-justify">
+      <p style="font-size: 16px; font-weight: 500;" class=" m-0">Fever -
+        <span class="font" style="font-size: 14px; font-weight: normal;">is a temporary increase in
+          your body
+          temperature, often due to an illness.</span>
+      </p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+  </ng-template>
+
+  <ng-template #content2 let-modal>
+    <div class="modal-body text-justify">
+      <p style="font-size: 16px; font-weight: 500;" class=" m-0">Cough -
+        <span class="font" style="font-size: 14px; font-weight: normal;">also known as tussis, is a voluntary
+          or involuntary act that clears the throat and breathing passage
+          of foreign particles, microbes, irritants, fluids, and mucus; it is a rapid expulsion of air from the
+          lungs.</span>
+      </p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+  </ng-template>
+
+  <ng-template #content3 let-modal>
+    <div class="modal-body text-justify">
+      <p style="font-size: 16px; font-weight: 500;" class=" m-0">Headache -
+        <span class="font" style="font-size: 14px; font-weight: normal;">is pain in any region of the
+          head.</span>
+      </p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+  </ng-template>
+
+  <ng-template #content4 let-modal>
+    <div class="modal-body text-justify">
+      <p style="font-size: 16px; font-weight: 500;" class=" m-0">Diarrhea -
+        <span class="font" style="font-size: 14px; font-weight: normal;">is loose, watery stools (bowel movements). You
+          have diarrhea if you have loose stools three or more times in one day.</span>
+      </p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+  </ng-template>
+
+  <ng-template #content5 let-modal>
+    <div class="modal-body text-justify">
+      <p style="font-size: 16px; font-weight: 500;" class=" m-0">Sore Throat -
+        <span class="font" style="font-size: 14px; font-weight: normal;">is pain, scratchiness or
+          irritation of the throat that often worsens when you swallow.</span>
+      </p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+  </ng-template>
+
+  <ng-template #content6 let-modal>
+    <div class="modal-body text-justify">
+      <p style="font-size: 16px; font-weight: 500;" class=" m-0">Muscle Pain -
+        <span class="font" style="font-size: 14px; font-weight: normal;">is caused by viral infections,
+          including COVID-19, can happen after a virus stimulates your immune system. Muscle Pain is most often related
+          to tension, overuse, or muscle injury from exercise or hard physical work.</span>
+      </p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+  </ng-template>
+
+  <ng-template #content7 let-modal>
+    <div class="modal-body text-justify">
+      <p style="font-size: 16px; font-weight: 500;" class=" m-0">Shortness of Breath -
+        <span class="font" style="font-size: 14px; font-weight: normal;">is often described as an intense tightening in
+          the chest, air hunger, difficulty breathing, breathlessness or a feeling of suffocation.</span>
+      </p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+  </ng-template>
+
+  <ng-template #content8 let-modal>
+    <div class="modal-body text-justify">
+      <p style="font-size: 16px; font-weight: 500;" class=" m-0">Fatigue -
+        <span class="font" style="font-size: 14px; font-weight: normal;">is a term used to describe an overall feeling
+          of tiredness or lack of energy​.</span>
+      </p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+  </ng-template>
+
+  <ng-template #content9 let-modal>
+    <div class="modal-body text-justify">
+      <p style="font-size: 16px; font-weight: 500;" class=" m-0">Loss of Taste & Smell -
+        <span class="font" style="font-size: 14px; font-weight: normal;">loss of smell can occur suddenly in people with
+          COVID-19 and is often accompanied by loss of taste. Also, with COVID-19, these symptoms may occur without a
+          runny or stuffy nose.</span>
+      </p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+  </ng-template>
+
+  <div class="slidercontainer py-2 text-center">
+    <div>
+      <span style="font-weight: 500; color: gray;" class="h7">Symptoms</span>
+      <br>
+      <label class="font-weight-bold mb-0" style="font-size: 13px;">Note:<span
+          style="font-size: 11px; font-weight: 500; color: gray;">
+          Tap the photos to see defenition.</span></label>
+
+    </div>
+
+    <ion-slides [options]="slidesOptions">
+      <ion-slide>
+        <ion-card (click)="openVerticallyCentered(content)">
+          <img class="symptoms" src="../../assets/images/symptoms/Fever.png" alt="">
+          <span>Fever</span>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card (click)="openVerticallyCentered(content2)">
+          <img class="symptoms" src="../../assets/images/symptoms/Cough.png" alt="">
+          <span>Cough</span>
+
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card (click)="openVerticallyCentered(content3)">
+          <img class="symptoms" src="../../assets/images/symptoms/Headache.png" alt="">
+          <span>Headache</span>
+
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card (click)="openVerticallyCentered(content4)">
+          <img class="symptoms" src="../../assets/images/symptoms/Diarrhea.png" alt="">
+          <span>Diarrhea</span>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card (click)="openVerticallyCentered(content5)">
+          <img class="symptoms" src="../../assets/images/symptoms/Sore throat.png" alt="">
+          <span>Sore Throat</span>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card (click)="openVerticallyCentered(content6)">
+          <img class="symptoms" src="../../assets/images/symptoms/Aching muscles.png" alt="">
+          <span>Aching Muscles</span>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card (click)="openVerticallyCentered(content7)">
+          <img class="symptoms" src="../../assets/images/symptoms/Shortness of breath.png" alt="">
+          <span style="font-size: 12px;">Shortness of Breath</span>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card (click)="openVerticallyCentered(content8)">
+          <img class="symptoms" src="../../assets/images/symptoms/Fatigue.png" alt="">
+          <span>Fatigue</span>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card (click)="openVerticallyCentered(content9)">
+          <img style="width: 75px; height: 75px;" src="../../assets/images/symptoms/tasteandsmell.png" alt="">
+          <span style="font-size: 12px;">Loss of Taste & Smell</span>
+        </ion-card>
+      </ion-slide>
+
+
+    </ion-slides>
+  </div>
+  <div class="slidercontainer">
+    <div style="text-align: center; font-size: 15px; font-weight: 500; color: gray;"><br><span>Prevention</span></div>
+    <ion-slides [options]="slidesOptions">
+      <ion-slide>
+        <ion-card>
+          <img class="symptoms" src="../../assets/images/prevention/distance.svg" alt="">
+          <span>Keep Distance</span>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card>
+          <img class="symptoms" src="../../assets/images/prevention/washhand.svg" alt="">
+          <span>Wash Hands Often</span>
+
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card>
+          <img class="symptoms" src="../../assets/images/prevention/mask.svg" alt="">
+          <span>Wear a Mask</span>
+
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card>
+          <img class="symptoms" src="../../assets/images/prevention/handsanitizer.svg" alt="">
+          <span>Use Alcohol</span>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card>
+          <img class="symptoms" src="../../assets/images/prevention/doctor.png" alt="">
+          <span>Visit Doctor</span>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card>
+          <img class="symptoms" src="../../assets/images/prevention/stayathome.png" alt="">
+          <span>Stay at Home</span>
+        </ion-card>
+      </ion-slide>
+
+    </ion-slides>
+  </div>
+</ion-content>

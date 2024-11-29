@@ -1,0 +1,24 @@
+<ion-app>
+
+  <ion-menu side="start" contentId="main" class="my-custom-menu">
+    <ion-header>
+      <ion-toolbar>
+        <div class="d-flex flex-row justify-content-start align-items-center" style="background: #FFF;">
+          <img class="mt-1" src="../assets/icon/R2Z-Icon.png" alt="" height="75px" width="75px">
+          <h1 style="color: #21b400; " class="m-0">R2Z Tracker</h1>
+        </div>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item>Data Privacy</ion-item>
+        <ion-item>Terms and Conditions</ion-item>
+        <ion-item>About</ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <ion-router-outlet id="main"></ion-router-outlet>
+
+  <ng-http-loader></ng-http-loader>
+</ion-app>

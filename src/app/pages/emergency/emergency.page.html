@@ -1,0 +1,84 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>
+      Emergency Hotlines
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="['../tabs/tab3']" style="border-radius: 50%; background-color: #1a1926;">
+        <ion-icon style="height: 25px; width: 25px;" color="custom" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+
+  <div class="covidhotline mt-3 p-3">
+
+    <span style="font-size: 24px; font-weight: 500;  color: #21b400;">COVID-19 Task Force</span>
+    <span style="font-size: 16px;">For COVID-19 concerns and other emergencies</span>
+    <span style="font-weight: 500;">Note:
+      <span style="font-weight: normal;">Tap the number to call.</span>
+    </span>
+
+
+
+    <a href="tel:+09219077022" style="font-size: 17px;">
+      <ion-icon name="call-outline"></ion-icon>
+      Phone # 09219077022
+    </a>
+    <a href="tel:+09777690224" style="font-size: 17px;">
+      <ion-icon name="call-outline"></ion-icon>
+      Phone # 09777690224
+    </a>
+
+
+
+
+  </div>
+
+  <div class="brgyhotline mt-3 px-2 pt-3">
+
+    <span style="font-size: 24px; font-weight: 500;  color: #21b400;">Barangay Contact</span>
+    <ion-searchbar [(ngModel)]="searchcontact"></ion-searchbar>
+    <span style="font-weight: 500;">Note:
+      <span style="font-weight: normal;">Tap the number to call.</span>
+    </span>
+    <div class="w-100 h-75 overflow-auto mt-1 px-2">
+      <ion-card *ngFor="let data of contact | filter:searchcontact" class="mt-0">
+        <ion-card-header class="bg-dark"
+          style="border-radius: 10px 10px 0px 0; color: #fff; font-size: 1.125rem; text-transform: capitalize;">
+          {{data.barangay}}</ion-card-header>
+
+        <ion-card-content class="pt-3">
+
+          <div class="text-left" style="line-height: 30px;">
+
+            <span class="text-dark" style="font-size: 1rem;">Brgy. Captain:
+              <span class="text-dark" style="font-size: 1rem; font-weight: 500;">
+                {{data.brgy_capt}}
+              </span>
+            </span><br>
+
+            <a href="tel:+{{data.cont_no}}" style="font-size: 17px;">
+              <ion-icon name="call-outline"></ion-icon>
+              Phone # {{data.cont_no}}
+            </a><br>
+
+            <a href="tel:+{{data.tel_no}}" style="font-size: 17px;">
+              <ion-icon name="call"></ion-icon>
+              Landline # {{data.tel_no}}
+            </a>
+
+          </div>
+
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+  </div>
+
+</ion-content>

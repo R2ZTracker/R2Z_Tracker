@@ -1,0 +1,37 @@
+ion-header {
+  ion-toolbar {
+    --background: #1a1926;
+    background: #1a1926;
+    padding: 0 10px;
+    height: 100px;
+    .bordered {
+      --border-radius: 10px;
+    }
+    ion-title {
+      color: #21b400;
+    }
+  }
+  ion-item {
+    --background: #f1f5f8;
+    background: #f1f5f8;
+    padding: 0 10px;
+  }
+  ion-button {
+    background: #ffffff;
+    border-radius: 10px;
+  }
+}
+
+ion-tabs {
+  ion-tab-bar {
+    --background: #ffffff;
+    height: 60px;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    ion-tab-button {
+      --color-selected: #40a845;
+    }
+  }
+}
